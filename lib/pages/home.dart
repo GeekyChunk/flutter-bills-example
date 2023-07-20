@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:niceapp/widgets/action_item.dart';
+import 'package:niceapp/widgets/bottom_bar.dart';
 import 'package:niceapp/widgets/item_card.dart';
 import 'package:niceapp/widgets/list_item.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -12,7 +13,8 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade200,
+      bottomNavigationBar: const BottomBar(),
+      backgroundColor: Colors.deepPurple.shade50,
       body: SafeArea(
           child: SingleChildScrollView(
         scrollDirection: Axis.vertical,
@@ -31,7 +33,7 @@ class HomePage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(100),
                     onTap: () {},
                     child: Padding(
-                        padding: EdgeInsets.all(4),
+                        padding: const EdgeInsets.all(4),
                         child: Container(
                           padding: const EdgeInsets.all(4),
                           decoration: BoxDecoration(
@@ -86,31 +88,42 @@ class HomePage extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ActionItem(
-                    title: "Send",
-                    iconImage: "assets/icons/send_money.png",
-                  ),
-                  ActionItem(
-                    title: "Pay",
-                    iconImage: "assets/icons/credit_card.png",
-                  ),
-                  ActionItem(
-                    title: "Bills",
-                    iconImage: "assets/icons/bills.png",
-                  ),
+                  Flexible(
+                      fit: FlexFit.tight,
+                      child: ActionItem(
+                        title: "Send",
+                        iconImage: "assets/icons/send_money.png",
+                      )),
+                  Flexible(
+                      fit: FlexFit.tight,
+                      child: ActionItem(
+                        title: "Pay",
+                        iconImage: "assets/icons/credit_card.png",
+                      )),
+                  Flexible(
+                      fit: FlexFit.tight,
+                      child: ActionItem(
+                        title: "Bills",
+                        iconImage: "assets/icons/bills.png",
+                      ))
                 ],
               ),
             ),
             const Padding(
-              padding: const EdgeInsets.all(25),
+              padding: EdgeInsets.all(25),
               child: Column(
                 children: [
                   ListItem(
                     title: "Statistics",
                     subTitle: "Payments and Income",
                     icon: "assets/icons/statistics.png",
+                  ),
+                  ListItem(
+                    title: "Transations",
+                    subTitle: "view your transations",
+                    icon: "assets/icons/transactions.png",
                   ),
                 ],
               ),

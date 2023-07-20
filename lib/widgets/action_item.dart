@@ -19,11 +19,12 @@ class ActionItem extends StatelessWidget {
       borderRadius: BorderRadius.circular(20),
       onTap: () {},
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
+        padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
         child: Column(
           children: [
             Container(
               height: 90,
+              width: 100,
               padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 24),
               decoration: BoxDecoration(
                 color: Colors.white,
